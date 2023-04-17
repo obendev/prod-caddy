@@ -14,6 +14,6 @@
 # https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure
 
 elisha-1scm2f.srv.dev.solus.io {
-        # (1)
-        root * /srv/caddy/domain.tld/public
+    # (1)
+    root * /srv/caddy/domain.tld/public
 }
