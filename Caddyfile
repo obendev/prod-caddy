@@ -1,3 +1,19 @@
 # prod-caddy, A production-ready Caddyfile, probably | MIT License
 # https://github.com/obendev/prod-caddy
 
+# ----------------------------------------------------------------------
+# | Section for domain.tld host                                        |
+# ----------------------------------------------------------------------
+# 
+# This virtual host listens for the `domain.tld` host and handles requests.
+# Replace `domain.tld` with your hostname before enabling.
+
+# (1) Set the site root to `/srv/caddy/domain.tld/public` for all requests.
+# /srv is the correct directory according to the FHS, see
+# https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s17.html
+# https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure
+
+elisha-1scm2f.srv.dev.solus.io {
+        # (1)
+        root * /srv/caddy/domain.tld/public
+}
