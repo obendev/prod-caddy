@@ -15,9 +15,9 @@ The Caddyfile's structure can be described visually:
 Further information can be found here: [Caddyfile Concepts — Caddy Documentation (caddyserver.com)](https://caddyserver.com/docs/caddyfile/concepts)
 
 ### PHP support
-By default, PHP support isn't implemented in this Caddyfile, due to different use-cases among users.
-If you'd like to implement PHP support, please refer to [Common Caddyfile Patterns — Caddy Documentation (caddyserver.com)](https://caddyserver.com/docs/caddyfile/patterns#php)
-Here is a sample snippet you could implement:
+By default, PHP implementation is not configured in this Caddyfile, due to different use-cases among users.
+If you'd like to implement PHP, please refer to [Common Caddyfile Patterns — Caddy Documentation (caddyserver.com)](https://caddyserver.com/docs/caddyfile/patterns#php)
+Here is a sample snippet you could use:
 ```
 (php82) {
         encode gzip
