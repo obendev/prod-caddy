@@ -13,7 +13,7 @@
 # https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s17.html
 # https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure
 
-elisha-1scm2f.srv.dev.solus.io {
+domain.tld {
     # (1)
     root * /srv/caddy/domain.tld/public
 }
