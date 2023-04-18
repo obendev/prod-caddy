@@ -4,7 +4,6 @@
 # ######################################################################
 # # GLOBAL CONFIGURATION                                               #
 # ######################################################################
-
 {
         # Set up logging for Caddy
         #
@@ -17,7 +16,7 @@
         log {
                 # Output logs to a file at the specified path
                 output file /var/log/caddy/error.log
-                
+
                 # Minimum level of messages to be logged
                 level WARN
         }
@@ -93,7 +92,7 @@
 # ----------------------------------------------------------------------
 # | Section for domain.tld host                                        |
 # ----------------------------------------------------------------------
-# 
+#
 # This virtual host listens for the `domain.tld` host and handles requests.
 # Replace `domain.tld` with your hostname before enabling.
 
@@ -112,11 +111,11 @@
 domain.tld {
         # (1)
         root * /srv/caddy/domain.tld/public
-        
+
         # (2)
         log {
                 output file /var/log/caddy/domain.tld/access.log
         }
-        
+
         import basic
 }
