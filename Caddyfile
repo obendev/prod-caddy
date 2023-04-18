@@ -1,6 +1,59 @@
 # prod-caddy, A production-ready Caddyfile, probably | MIT License
 # https://github.com/obendev/prod-caddy
 
+# ######################################################################
+# # GLOBAL CONFIGURATION                                               #
+# ######################################################################
+
+{
+        # Set up logging for Caddy
+        #
+        # https://caddyserver.com/docs/logging
+        # https://caddyserver.com/docs/caddyfile/directives/log
+        #
+        # The `log` directive in the global options block is used to
+        # configure logs that are not site-specific. For site-specific logs,
+        # the `log` directive should be used within the site block.
+        log {
+                # Output logs to a file at the specified path
+                output file /var/log/caddy/error.log
+                
+                # Minimum level of messages to be logged to the ErrorLog
+                level WARN
+        }
+}
+
+# ######################################################################
+# # SNIPPETS                                                           #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Snippet                                                            |
+# ----------------------------------------------------------------------
+
+# Snippet
+(snippet) {
+        
+}
+
+# ----------------------------------------------------------------------
+# | Basic configuration                                                |
+# ----------------------------------------------------------------------
+
+# (1) By default, it does not allow directory browsing, so there is no need to
+# explicitly disable it like in other web servers.
+# https://caddyserver.com/docs/caddyfile/directives/file_server
+(basic) {
+        # (1)
+        file_server
+
+        import snippet
+}
+
+# ######################################################################
+# # SITES                                                              #
+# ######################################################################
+
 # ----------------------------------------------------------------------
 # | Section for domain.tld host                                        |
 # ----------------------------------------------------------------------
@@ -9,11 +62,25 @@
 # Replace `domain.tld` with your hostname before enabling.
 
 # (1) Set the site root to `/srv/caddy/domain.tld/public` for all requests.
-# /srv is the correct directory according to the FHS, see
+# /srv is the expected directory according to the FHS, see
 # https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s17.html
 # https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure
 
+# (2) Set up site-specific logging.
+# By default, Caddy uses JSON Structured Log Format. To change the log format to
+# NCSA Combined Log Format, it is necessary to add the `format` module within the
+# `log` directive. `output file` specifies logging to a file at the specified path.
+# https://caddyserver.com/docs/logging
+# https://caddyserver.com/docs/caddyfile/directives/log
+
 domain.tld {
-    # (1)
-    root * /srv/caddy/domain.tld/public
+        # (1)
+        root * /srv/caddy/domain.tld/public
+        
+        # (2)
+        log {
+                output file /var/log/caddy/domain.tld/access.log
+        }
+        
+        import basic
 }
