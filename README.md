@@ -2,7 +2,7 @@
 A production-ready Caddyfile, probably
 
 This project is inspired by [h5bp/server-configs-apache](https://github.com/h5bp/server-configs-apache) and [h5bp/server-configs-nginx](https://github.com/h5bp/server-configs-nginx).  
-I'd like to to provide a ready to go Caddy configuration, in form of a [Caddyfile](https://caddyserver.com/docs/quick-starts/caddyfile).
+I'd like to to provide a ready to go [Caddy](https://github.com/caddyserver/caddy) configuration, in form of a [Caddyfile](https://caddyserver.com/docs/quick-starts/caddyfile).
 
 ## Getting started
 Before using this configuration snippet, please make sure you're familiar with how to use a `Caddyfile`.  
