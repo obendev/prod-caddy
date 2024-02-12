@@ -10,7 +10,7 @@ I strongly recommend that you at least read the Getting Started Guide of Caddy, 
 
 ### Caddy structure
 The Caddyfile's structure can be described visually:
-![Visualized Caddy structure](https://caddyserver.com/resources/images/caddyfile-visual.png)
+![Visualized Caddy structure](https://caddyserver.com/old/resources/images/caddyfile-visual.png)
 
 Further information can be found here: [Caddyfile Concepts — Caddy Documentation (caddyserver.com)](https://caddyserver.com/docs/caddyfile/concepts)
 
